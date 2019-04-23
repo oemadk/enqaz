@@ -48,21 +48,21 @@ constructor(private modalService: NgbModal, private router: Router,
         private route: ActivatedRoute,private http:HttpClient) {
         this.temp = [...data];
         this.rows = data;
-    this.token =  JSON.parse( localStorage.getItem('currentUser'));
-          this.token = this.token.token;
+    // this.token =  JSON.parse( localStorage.getItem('currentUser'));
+    //       this.token = this.token.token;
        
-    var config = {
-      headers: {
-          'Content-Type': 'application/json',
-          'authorization': "Bearer" + " " + this.token
-      }}
-     this.http.get('http://3.86.186.71:8080/api/order/done', config)
-     .subscribe(res=>{
-        this.temp = [this.rows];
-        this.rows = res['orders'];
+    // var config = {
+    //   headers: {
+    //       'Content-Type': 'application/json',
+    //       'authorization': "Bearer" + " " + this.token
+    //   }}
+    //  this.http.get('http://3.86.186.71:8080/api/order/done', config)
+    //  .subscribe(res=>{
+    //     this.temp = [this.rows];
+    //     this.rows = res['orders'];
 
-       console.log(this.rows)
-     });
+    //    console.log(this.rows)
+    //  });
     }
 
 

@@ -1,4 +1,4 @@
-import { Component,ViewChild, OnInit } from '@angular/core';
+import { Component,ViewChild} from '@angular/core';
 import { DatatableComponent } from "@swimlane/ngx-datatable/release";
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { OrderService } from '../serviceprovider/order.service';
@@ -18,7 +18,7 @@ declare var require: any;
   styleUrls: ['./neworders.component.scss']
 })
 
-export class NewordersComponent implements OnInit {
+export class NewordersComponent  {
     rows:any[] = [];
     selected: any[] = [];
   	closeResult: string;
@@ -45,8 +45,8 @@ export class NewordersComponent implements OnInit {
 constructor(private router: Router,
         private route: ActivatedRoute, private _htc:HttpClient,private modalService: NgbModal,private http:HttpClient, private orderService:OrderService) {
   
-        this.token =  JSON.parse( localStorage.getItem('currentUser'));
-          this.token = this.token.token;
+        // this.token =  JSON.parse( localStorage.getItem('currentUser'));
+        //   this.token = this.token.token;
        
         // this.rows = data;
 
@@ -59,18 +59,18 @@ constructor(private router: Router,
     //   'Authorization': this.token
     // })
 
-    var config = {
-      headers: {
-          'Content-Type': 'application/json',
-          'authorization': "Bearer" + " " + this.token
-      }}
-     this.http.get('http://3.86.186.71:8080/api/order/waitingOrders', config)
-     .subscribe(res=>{
-        this.temp = [this.rows];
-        this.rows = res['order'].reverse();
+    // var config = {
+    //   headers: {
+    //       'Content-Type': 'application/json',
+    //       'authorization': "Bearer" + " " + this.token
+    //   }}
+    //  this.http.get('http://3.86.186.71:8080/api/order/waitingOrders', config)
+    //  .subscribe(res=>{
+    //     this.temp = [this.rows];
+    //     this.rows = res['order'].reverse();
 
-       console.log('res')
-     });
+    //    console.log('res')
+    //  });
     }
 
 // ngOnInit(){
@@ -90,27 +90,25 @@ constructor(private router: Router,
 
 
 // }
-printX:number;
-  ngOnInit() {
-    const myInterval = Observable.interval(30000);
-    myInterval.subscribe((x : number)=>{
-      this.printX=x;
-      console.log('its working now bitch')
-       var config = {
-      headers: {
-          'Content-Type': 'application/json',
-          'authorization': "Bearer" + " " + this.token
-      }}
-        this.http.get('http://3.86.186.71:8080/api/order/waitingOrders', config)
-     .subscribe(res=>{
-        this.rows = res['order'].reverse();
+// printX:number;
+//   ngOnInit() {
+//     const myInterval = Observable.interval(30000);
+//     myInterval.subscribe((x : number)=>{
+//       this.printX=x;
+//       console.log('its working now bitch')
+//        var config = {
+//       headers: {
+//           'Content-Type': 'application/json',
+//           'authorization': "Bearer" + " " + this.token
+//       }}
+//         this.http.get('http://3.86.186.71:8080/api/order/waitingOrders', config)
+//      .subscribe(res=>{
+//         this.rows = res['order'].reverse();
        
-       console.log(res)
-     });
-    });
+//        console.log(res)
+//      });
+//     });
 
-
-    }
     updateFilter(event) {
         const val = event.target.value.toLowerCase();
 

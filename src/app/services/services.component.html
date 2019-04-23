@@ -1,0 +1,294 @@
+<!-- Filter Datatable Options Starts -->
+<section id="filter" class="mb-3">
+    <div class="row">
+    <div class="row">
+        <div class="col-6">
+            <div class="content-header">Services</div>
+        </div>
+        <div class="col-6">
+             <div class="content-header" style="float: right;">
+                                            <button  (click)="addNew(modal2)" type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-plus"></i> Add A New Services
+                                </button>
+                            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+<div class="row">
+
+        <div class="col-xl-4 col-lg-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="px-3 py-3">
+                        <div class="media">
+                            <div class="media-body text-left">
+                                <h3 class="mb-1 warning">2312 LE</h3>
+                                <span>Winch</span>
+                            </div>
+                            <div class="media-right align-self-center">
+                                <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                                        <select id="projectinput6" name="interested" class="form-control">
+                                            <option value="none" selected="" disabled="">Month</option>
+                                            <option value="design">Jan</option>
+                                            <option value="development">Feb</option>
+                                            <option value="development">March</option>
+                                            <option value="development">April</option>
+                                            <option value="development">May</option>
+                                            <option value="development">June</option>
+                                            <option value="development">July</option>
+                                            <option value="development">August</option>
+                                            <option value="development">October</option>
+                                            <option value="development">November</option>
+                                            <option value="development">December</option>
+                                        </select>
+
+                                                                                <select id="projectinput6" name="interested" class="form-control">
+                                            <option value="none" selected="" disabled="">Year</option>
+                                            <option value="design">2017</option>
+                                            <option value="design">2018</option>
+                                            <option value="development">2019</option>
+                                           
+                                        </select>
+
+
+                </div>
+            </div>
+        </div>
+
+
+                <div class="col-xl-4 col-lg-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="px-3 py-3">
+                        <div class="media">
+                            <div class="media-body text-left">
+                                <h3 class="mb-1 warning">231 LE</h3>
+                                <span>Tires</span>
+                            </div>
+                            <div class="media-right align-self-center">
+                                <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                                        <select id="projectinput6" name="interested" class="form-control">
+                                            <option value="none" selected="" disabled="">Month</option>
+                                            <option value="design">Jan</option>
+                                            <option value="development">Feb</option>
+                                            <option value="development">March</option>
+                                            <option value="development">April</option>
+                                            <option value="development">May</option>
+                                            <option value="development">June</option>
+                                            <option value="development">July</option>
+                                            <option value="development">August</option>
+                                            <option value="development">October</option>
+                                            <option value="development">November</option>
+                                            <option value="development">December</option>
+                                        </select>
+
+                                                                                <select id="projectinput6" name="interested" class="form-control">
+                                            <option value="none" selected="" disabled="">Year</option>
+                                            <option value="design">2017</option>
+                                            <option value="design">2018</option>
+                                            <option value="development">2019</option>
+                                           
+                                        </select>
+
+
+                </div>
+            </div>
+        </div>
+
+
+                <div class="col-xl-4 col-lg-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="px-3 py-3">
+                        <div class="media">
+                            <div class="media-body text-left">
+                                <h3 class="mb-1 warning">12 LE</h3>
+                                <span>Oil</span>
+                            </div>
+                            <div class="media-right align-self-center">
+                                <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                                        <select id="projectinput6" name="interested" class="form-control">
+                                            <option value="none" selected="" disabled="">Month</option>
+                                            <option value="design">Jan</option>
+                                            <option value="development">Feb</option>
+                                            <option value="development">March</option>
+                                            <option value="development">April</option>
+                                            <option value="development">May</option>
+                                            <option value="development">June</option>
+                                            <option value="development">July</option>
+                                            <option value="development">August</option>
+                                            <option value="development">October</option>
+                                            <option value="development">November</option>
+                                            <option value="development">December</option>
+                                        </select>
+
+                                                                                <select id="projectinput6" name="interested" class="form-control">
+                                            <option value="none" selected="" disabled="">Year</option>
+                                            <option value="design">2017</option>
+                                            <option value="design">2018</option>
+                                            <option value="development">2019</option>
+                                           
+                                        </select>
+
+
+                </div>
+            </div>
+        </div>
+</div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...' (keyup)='updateFilter($event)'
+            />
+            <ngx-datatable  #table class='bootstrap' [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+                [rowHeight]="'auto'" [limit]="10" [rows]='rows' [selected]="selected" [selectionType]="'cell'" (select)="onSelect($event, modal)" >
+            </ngx-datatable>
+        </div>
+    </div>
+</section>
+<!-- Filter Datatable Options Ends -->
+
+<ng-template #modal let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Edit {{selected['0'].name}}'s Service</h4>
+                </div>
+                <div class="card-body">
+                 <form class="form">
+
+                    <div class="px-3">                      
+
+                            <div class="form-body">
+                                <h4 class="form-section"><i class="ft-info"></i> Edit {{selected['0'].name}}</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label >Name</label>
+                                            <p class="form-control">{{selected['0'].name}}</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label>Base Fare</label>
+                                            <p class="form-control-static">{{selected['0'].base_fare}}</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>     
+
+
+                          <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label>Price Per KM</label>
+                                            <p class="form-control">{{selected['0'].price_km}}</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label>Price Per Minutes</label>
+                                            <p class="form-control-static" >{{selected['0'].price_minutes}}</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>                                                                                                            
+                            
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-actions" style="text-align: center;">
+                                <button (click)="c('Close click')"  type="button" class="btn btn-raised btn-warning">
+                                    <i class="ft-x"></i> Cancel
+                                </button>
+                                <button  (click)="close(selected['0']._id, selectedOption )" type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+                            </div>
+                        </form>
+</div>
+                    </div>
+            </div>
+</ng-template>
+
+
+<ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Add a new Service</h4>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">                      
+
+                        <form class="form" [formGroup]="addServiceForm">
+                            <div class="form-body">
+
+                                <h4 class="form-section"><i class="ft-mail"></i> Service Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Service Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" formControlName="name" >
+                                </div>                              
+
+                                <div class="form-group">
+                                    <label for="userinput5">Base Fare</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" formControlName="type" >
+                                </div>
+                                                         <div class="form-group">
+                                    <label for="userinput5">Price Per KM</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" formControlName="type" >
+                                </div>
+                                                         <div class="form-group">
+                                    <label for="userinput5">Price Per Minutes</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" formControlName="type" >
+                                </div>
+                                
+
+    
+
+
+                            </div>
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Cancel
+                                </button>
+                                <button  (click)="addService(addServiceForm)" type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</ng-template>
+

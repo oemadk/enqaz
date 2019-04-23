@@ -1,0 +1,219 @@
+<!-- Filter Datatable Options Starts -->
+<section id="filter" class="mb-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="content-header">Filter Option</div>
+        </div>
+        <div class="col-6">
+        	 <div class="content-header" style="float: right;">
+        									<button  (click)="addNew(modal2)" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-plus"></i> Add A New User
+								</button>
+							</div>
+
+        </div>
+    </div>
+<section id="extended">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Users</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>User Name</th>
+                                    <th>Date Created</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Omar Emad</td>
+                                    <td>oemadk</td>
+                                    <td>20/04/2019</td>
+                                    <td>01111204333</td>
+                                    <td>oemadk@gmail.com</td>
+                                    <td>Administrator</td>
+                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Deativate</button>
+                                    </td>
+                                    <td>
+                                        <a href="pages/profile" class="info p-0" data-original-title="" title="">
+                                            <i class="ft-user font-medium-3 mr-2"></i>
+                                        </a>
+
+                                                  <a (click)="resetpassword()" class="info p-0" data-original-title="" title="">
+                                            <i class="ft-lock font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a (click)="onSelect(modal)" class="success p-0" data-original-title="" title="">
+                                            <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+<!-- Filter Datatable Options Ends -->
+
+<ng-template #modal let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Edit Omar's Account</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> User Info</h4>
+
+								<div class="form-group">
+									<label for="userinput5">User's Name</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" placeholder="Omar Emad">
+								</div>
+																<div class="form-group">
+									<label for="userinput5">User's Phone Number</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" placeholder="01111204333">
+								</div>
+																<div class="form-group">
+									<label for="userinput5">User's Email</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" placeholder="oemadk@gmail.com">
+								</div>
+								<div class="form-group">
+											                                <fieldset class="form-group">
+		                                    <label for="basicSelect">Status</label>
+		                                    <select class="form-control" id="basicSelect">
+		                                      <option>Select status</option>
+		                                      <option selected>Activate</option>
+		                                      <option>Deactivate</option>
+
+		                                    </select>
+		                                </fieldset>   
+								</div>
+								</div>
+
+
+
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+
+
+
+
+<!--add new smell Modal-->
+
+
+
+
+<ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Add a new User</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> User Info</h4>
+
+								<div class="form-group">
+									<label for="userinput5">User's Name</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">User's Email</label>
+									<input class="form-control border-primary" type="email"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">User's Phone Number</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">Password</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+											                                <fieldset class="form-group">
+		                                    <label for="basicSelect">User's Role</label>
+		                                    <select class="form-control" id="basicSelect">
+		                                      <option>Select Option</option>
+		                                      <option selected>Administrator</option>
+		                                      <option>Operator</option>
+
+		                                    </select>
+		                                </fieldset>   
+								</div>
+
+
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+<!--add new smell Modal Ends Here-->

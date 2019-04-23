@@ -1,0 +1,274 @@
+
+    <!-- Filter Datatable Options Starts -->
+<section id="filter" class="mb-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="content-header">Filter Option</div>
+        </div>
+        <div class="col-6">
+
+
+        </div>
+    </div>
+<section id="extended animated fadeInDown infinite" >
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 style="text-align: center;" class="card-title">SetOff</h4>
+                        	<div class="col-sm-12">
+
+              <button (click)="showcompany()" style="display: inline-block; width: 100%"  type="button" class="btn btn-raised btn-primary">
+                                    Show Company Providers
+            </button>
+
+                          <button (click)="showproviders()" style="display: inline-block; width: 100%" type="button" class="btn btn-raised btn-primary">
+                                   Show Individual Providers
+            </button>
+
+                        
+    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+
+  <div class="row">
+
+                    	    	<div class="col-sm-9">
+                        <table *ngIf="provider" class="table table-responsive text-center animated fadeInDown">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>The Due Amount</th>
+                                    <th>Set Off Status</th>
+                                    <th>View Orders</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td >
+
+
+
+
+                                    <p placement="top" ngbTooltip="Cash: 12123 Credit:1231 Due Amount:12">Hossam Emad</p> 
+
+
+                                </td>
+                                    <td>144 EGP</td>
+                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Setteled</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Not setteled</button></td>
+                                    <td><button class="btn btn-success btn-raised">View Orders</button></td>
+                                   
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+
+<div class="animated fadeInDown delay-2s">
+                       <table *ngIf="company" class="table table-responsive text-center  animated fadeInDown">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>The Due Amount</th>
+                                    <th>Set Off Status</th>
+                                    <th>View Orders</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+
+
+
+                                   <p placement="top" ngbTooltip="Cash: 12123 Credit:1231 Due Amount:12"> Omar Emad</p>
+
+
+                                </td>
+                                    <td>2000 EGP</td>
+                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Setteled</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Not setteled</button></td>
+                                    <td><button class="btn btn-success btn-raised">View Orders</button></td>
+                                   
+                                </tr>
+
+                                                                <tr>
+                                    <td>2</td>
+                                    <td >
+
+                                    <p placement="top" ngbTooltip="Cash: 12123 Credit:1231 Due Amount:12">Mahitab Dagher</p>
+
+
+                                </td>
+                                    <td>200 EGP</td>
+                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Setteled</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Not setteled</button></td>
+                                    <td><button class="btn btn-success btn-raised">View Orders</button></td>
+                                   
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+
+                    </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+<!-- Filter Datatable Options Ends -->
+
+<ng-template #modal let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Edit Omar's Account</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> User Info</h4>
+
+								<div class="form-group">
+									<label for="userinput5">User's Name</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" placeholder="Omar Emad">
+								</div>
+																<div class="form-group">
+									<label for="userinput5">User's Phone Number</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" placeholder="01111204333">
+								</div>
+																<div class="form-group">
+									<label for="userinput5">User's Email</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" placeholder="oemadk@gmail.com">
+								</div>
+								<div class="form-group">
+											                                <fieldset class="form-group">
+		                                    <label for="basicSelect">Status</label>
+		                                    <select class="form-control" id="basicSelect">
+		                                      <option>Select status</option>
+		                                      <option selected>Activate</option>
+		                                      <option>Deactivate</option>
+
+		                                    </select>
+		                                </fieldset>   
+								</div>
+								</div>
+
+
+
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+
+
+
+
+<!--add new smell Modal-->
+
+
+
+
+<ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Add a new User</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> User Info</h4>
+
+								<div class="form-group">
+									<label for="userinput5">User's Name</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">User's Email</label>
+									<input class="form-control border-primary" type="email"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">User's Phone Number</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">Password</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+											                                <fieldset class="form-group">
+		                                    <label for="basicSelect">User's Role</label>
+		                                    <select class="form-control" id="basicSelect">
+		                                      <option>Select Option</option>
+		                                      <option selected>Administrator</option>
+		                                      <option>Operator</option>
+
+		                                    </select>
+		                                </fieldset>   
+								</div>
+
+
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+<!--add new smell Modal Ends Here-->

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "Winch",
+        "price_km": "12",
+        "price_minutes": "12",
+        "base_fare": "133"
+    },    {
+        "id": "2",
+        "name": "Tires",
+        "price_km": "12",
+        "price_minutes": "12",
+        "base_fare": "133"
+    },
+        {
+        "id": "3",
+        "name": "Oil",
+        "price_km": "12",
+        "price_minutes": "12",
+        "base_fare": "133"
+    }
+
+]

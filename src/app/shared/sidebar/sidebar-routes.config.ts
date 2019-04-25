@@ -34,6 +34,9 @@ export const ROUTES: RouteInfo[] = [
         { path: '/packages', title: 'Packages', icon: 'ft-package', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     // { path: '/report', title: 'Report', icon: 'ft-info', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     { path: '/setoff', title: 'Set off', icon: 'ft-info', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/trackdrivers', title: 'Track Drivers', icon: 'ft-info', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/settings', title: 'Settings', icon: 'ft-info', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/emergency/codes', title: 'Emergency Codes', icon: 'ft-info', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
 
     // { path: '/inbox', title: 'Inbox', icon: 'ft-mail', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     // { path: '/chat', title: 'Chat', icon: 'ft-message-square', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },

@@ -18,6 +18,9 @@ import { OperatorwashingComponent } from '../../operatorwashing/operatorwashing.
 import { OperatorironingComponent } from '../../operatorironing/operatorironing.component'; 
 import { OperatorlabelingComponent } from '../../operatorlabeling/operatorlabeling.component'; 
 import { SetoffComponent } from '../../setoff/setoff.component'; 
+import { Trackdrivers1Component } from '../../trackdrivers1/trackdrivers1.component';
+import { Settings2Component } from '../../settings2/settings2.component';
+import { EmergencyComponent } from '../../emergency/emergency.component';
 
 //Route for content layout with sidebar, navbar and footer.
 
@@ -28,6 +31,15 @@ export const Full_ROUTES: Routes = [
   },{
     path: 'services',
     component: ServicesComponent
+  },{
+    path: 'trackdrivers',
+    component: Trackdrivers1Component
+  },{
+    path: 'settings',
+    component: Settings2Component
+  },{
+    path: 'emergency/codes',
+    component: EmergencyComponent
   },{
     path: 'operator/delivery',
     component: OperatordeliveryComponent

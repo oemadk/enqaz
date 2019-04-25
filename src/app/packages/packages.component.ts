@@ -31,6 +31,7 @@ export class PackagesComponent implements OnInit {
      addPackageForm;
      public nowEditing;
      public errorMsg = '';
+         a =1;
   constructor(private http:HttpClient,private modalService: NgbModal,public toastr: ToastsManager, private _fbuilder: FormBuilder,
  ) { 
 
@@ -88,6 +89,11 @@ export class PackagesComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+
+  usersonpackage(modal){
+this.modalService.open(modal);
   }
 onActivate($event){
 }

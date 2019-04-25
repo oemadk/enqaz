@@ -1,3 +1,211 @@
-<p>
-  emergency works!
-</p>
+<section id="filter" class="mb-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="content-header">Filter Option</div>
+        </div>
+        <div class="col-6">
+        	 <div class="content-header" style="float: right;">
+        									<button  (click)="addNew(modal2)" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-plus"></i> Add A New Setting
+								</button>
+							</div>
+
+        </div>
+    </div>
+<section id="extended">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Settings</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>The Code</th>
+                                    <th>Start</th>
+                                    <th>End</th>
+                                    <th>Percentage/Fixed Amount</th>
+                                    <th>Minimum Amount</th>
+                                    <th>Services</th>
+                                    <th>Send SMS to specific User</th>
+                                    <th>Send SMS to all</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>EnqazFirstPromoCode</td>
+                                    <td>12/05/2019</td>
+                                    <td>12/06/2019</td>
+                                    <td>12%</td>
+                                    <td>300 EGP</td>
+                                    <td>Winch, Tires, Oil</td>
+                                    <td><button (click)="addNew(modal3)" class="btn btn-success btn-raised">Specific User</button>
+                                    </td>
+                                    <td>
+                                    <button (click)="sendtoall()"  class="btn btn-success btn-raised">All Users</button>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Add a new Setting</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> Setting Info</h4>
+								<div class="form-group">
+											                                <fieldset class="form-group">
+		                                    <label for="basicSelect">Choose Service</label>
+		                                    <select class="form-control" id="basicSelect">
+		                                      <option>Select Option</option>
+		                                      <option selected>Winch</option>
+		                                      <option>Oil</option>
+		                                      <option>Tires</option>
+
+		                                    </select>
+		                                </fieldset>   
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Setting's Name</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Service Cancellation Fees</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">1st Radius</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">1st Radius KM Price</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">2nd Radius</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+								<div class="form-group">
+									<label for="userinput5">2nd Radius KM Price</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Enqaz High Limit</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Enqaz Low Limit</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Price Per Minute</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+
+
+
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+
+
+
+<ng-template #modal3 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Send SMS to Specific Users</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> Setting Info</h4>
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Type User Name</h4>
+        </div>
+        <div class="card-body">
+          <div class="card-block">
+            <div class="form-group">
+              <input type="text" class="form-control format mb-3" [(ngModel)]="modelFormat" [ngbTypeahead]="search" [resultFormatter]="formatter"
+              placeholder="Search for alabama" />
+            </div>
+            <p>Model: {{ modelFormat | json }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>

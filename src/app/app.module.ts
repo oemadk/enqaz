@@ -48,6 +48,7 @@ import { EmergencyComponent } from './emergency/emergency.component';
 import { Settings2Component } from './settings2/settings2.component';
 import { Trackdrivers1Component } from './trackdrivers1/trackdrivers1.component';
 import { CreateorderComponent } from './createorder/createorder.component'; 
+import { JsonpModule } from '@angular/http';
 
 @NgModule({
     declarations: [
@@ -89,6 +90,8 @@ import { CreateorderComponent } from './createorder/createorder.component';
         BrowserAnimationsModule,
         AppRoutingModule,
         SharedModule,
+                JsonpModule,
+
                 NgxDatatableModule,
 
         ToastModule.forRoot(),

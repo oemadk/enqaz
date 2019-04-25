@@ -1,3 +1,162 @@
-<p>
-  settings2 works!
-</p>
+<section id="filter" class="mb-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="content-header">Filter Option</div>
+        </div>
+        <div class="col-6">
+        	 <div class="content-header" style="float: right;">
+        									<button  (click)="addNew(modal2)" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-plus"></i> Add A New Setting
+								</button>
+							</div>
+
+        </div>
+    </div>
+<section id="extended">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Settings</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Settings Name</th>
+                                    <th>Service Cancelation Fees</th>
+                                    <th>1st Radius</th>
+                                    <th>1st Radius KM Price</th>
+                                    <th>2nd Radius</th>
+                                    <th>2nd Radius KM Price</th>
+                                    <th>Enqaz High Limit</th>
+                                    <th>Enqaz Low Limit</th>
+                                    <th> Price Per Minute </th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Winch</td>
+                                    <td>12 EGP</td>
+                                    <td>1212 EGP</td>
+                                    <td>122 EGP</td>
+                                    <td>300 EGP</td>
+                                    <td>400 EGP</td>
+                                    <td>high limit</td>
+                                    <td>low limit</td>
+                                    <td>12 EGP</td>
+                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Deativate</button>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Add a new Setting</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> Setting Info</h4>
+								<div class="form-group">
+											                                <fieldset class="form-group">
+		                                    <label for="basicSelect">Choose Service</label>
+		                                    <select class="form-control" id="basicSelect">
+		                                      <option>Select Option</option>
+		                                      <option selected>Winch</option>
+		                                      <option>Oil</option>
+		                                      <option>Tires</option>
+
+		                                    </select>
+		                                </fieldset>   
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Setting's Name</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Service Cancellation Fees</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">1st Radius</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">1st Radius KM Price</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">2nd Radius</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+								<div class="form-group">
+									<label for="userinput5">2nd Radius KM Price</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Enqaz High Limit</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Enqaz Low Limit</label>
+									<input class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Price Per Minute</label>
+									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+
+
+
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>

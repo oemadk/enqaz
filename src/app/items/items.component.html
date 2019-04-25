@@ -13,12 +13,40 @@
 
         </div>
     </div>
-<section id="extended">
+
+    <div class="row">
+                <div class="col-sm-2">
+                                <h4 class="form-section" style="    font-size: 1.1rem;
+"><i class="ft-mail"></i> Choose Vendor Type</h4>
+
+              <button style="display: block; width: 100%"  (click)="insuranceon()" type="button" class="btn btn-raised btn-primary">
+                                     Insurance 
+            </button>
+
+                          <button style="display: block; width: 100%" (click)="showroomon()" type="button" class="btn btn-raised btn-primary">
+                                    ShowRoom 
+            </button>
+
+
+ <button style="display: block; width: 100%" (click)="showofflineF()" type="button" class="btn btn-raised btn-primary">
+                                    Offline 
+            </button>
+
+                                                <div ngbDropdown>
+                            <button  style="display: block; width: 100%"   type="button" class="btn btn-raised btn-primary" id="dropdownBasic1" ngbDropdownToggle>Provider</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button (click)="provideron()" class="dropdown-item">Individual</button>
+                                <button (click)="provideron2()" class="dropdown-item">Company</button>
+                            </div>
+                        </div> 
+    </div>
+    <div class="col-sm-10">
+        <section id="extended" *ngIf="insurance" class="animation-drop-down">
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Vendors</h4>
+                    <h4 class="card-title">Insurance Vendors</h4>
                 </div>
                 <div class="card-body">
                     <div class="card-block">
@@ -26,39 +54,33 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Full Name</th>
-                                    <th>User Name</th>
-                                    <th>Date Created</th>
-                                    <th>Phone Number</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
+                                    <th>Company Name</th>
+                                    <th>Package</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
                                     <th>Status</th>
-                                    <th>Actions</th>
+                                    <th>Number of Users</th>
+                                    <th>Vendor Orders</th>
+                                    <th>Renewal Reminder</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Omar Emad</td>
-                                    <td>oemadk</td>
+                                    <td>Metanoia</td>
+                                    <td>Starter Package</td>
                                     <td>20/04/2019</td>
-                                    <td>01111204333</td>
-                                    <td>oemadk@gmail.com</td>
-                                    <td>Administrator</td>
-                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
+                                    <td>4/06/2019</td>
+                                                                        <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
 
                                     <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Deativate</button>
                                     </td>
-                                    <td>
-                                        <a href="pages/profile" class="info p-0" data-original-title="" title="">
-                                            <i class="ft-user font-medium-3 mr-2"></i>
-                                        </a>
+                                    <td>44</td>
+                                    <td>11</td>
 
+                                    <td>
                                                   <a (click)="resetpassword()" class="info p-0" data-original-title="" title="">
                                             <i class="ft-lock font-medium-3 mr-2"></i>
-                                        </a>
-                                        <a (click)="onSelect(modal)" class="success p-0" data-original-title="" title="">
-                                            <i class="ft-edit-2 font-medium-3 mr-2"></i>
                                         </a>
 
                                     </td>
@@ -72,6 +94,197 @@
         </div>
     </div>
 </section>
+
+          <section id="extended" *ngIf="provider" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Provider Individual Vendors</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Individual Company Name</th>
+                                    <th>No Of Orders</th>
+                                    <th>Overall Rating</th>
+                                    <th>Status</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Jenkins</td>
+                                    <td>14</td>
+                                    <td><i style="color: gold;" class="ft-star"></i>
+                                    <i style="color: gold;" class="ft-star"></i>
+                                <i style="color: gold;" class="ft-star"></i>
+                            <i style="color: gold;" class="ft-star"></i>
+                        <i class="ft-star"></i></td>                                   
+                     <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Deativate</button>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="extended" *ngIf="showoffline" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Offline Vendors</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>City</th>
+                                    <th>Area</th>
+                                    <th>District</th>
+                                    <th>Status</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Hassan Winch</td>
+                                    <td>01111204333</td>
+                                    <td>Cairo</td>                                   
+                                    <td>Hadayek El Obba</td>                                   
+                                    <td>202 Lotfy Ibrahim</td>                                   
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+          <section id="extended" *ngIf="providerindv" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Provider Company Vendors</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Company Name</th>
+                                    <th>No Of Orders</th>
+                                    <th>No Of Drivers</th>
+                                    <th>Overall Rating</th>
+                                    <th>Status</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Compani</td>
+                                    <td>11</td>
+                                    <td>1</td>
+                                    <td><i style="color: gold;" class="ft-star"></i>
+                                    <i style="color: gold;" class="ft-star"></i>
+                                <i style="color: gold;" class="ft-star"></i>
+                            <i style="color: gold;" class="ft-star"></i>
+                        <i class="ft-star"></i></td>                                   
+                     <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Deativate</button>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+          <section id="extended" *ngIf="showroom" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">ShowRoom Vendors</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Company Name</th>
+                                    <th>Package</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Status</th>
+                                    <th>Number of Users</th>
+                                    <th>Vendor Orders</th>
+                                    <th>Renewal Reminder</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>GreenLand</td>
+                                    <td>Starter Package</td>
+                                    <td>20/04/2019</td>
+                                    <td>4/06/2019</td>
+                                                                        <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Deativate</button>
+                                    </td>
+                                    <td>6</td>
+                                    <td>0</td>
+
+                                    <td>
+                                                  <a (click)="resetpassword()" class="info p-0" data-original-title="" title="">
+                                            <i class="ft-lock font-medium-3 mr-2"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>
+    </div>
+
 </section>
 <!-- Filter Datatable Options Ends -->
 
@@ -144,30 +357,43 @@
 <div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" id="basic-layout-colored-form-control">Add a new User</h4>
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Add a new Vendor</h4>
                 </div>
                 <div class="card-body">
                     <div class="px-3">                      
 
                         <form class="form">
                             <div class="form-body">
-
-                                <h4 class="form-section"><i class="ft-mail"></i> User Info</h4>
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Vendor's Role</label>
+                                            <select [(ngModel)]="choice" (ngModelChange)="doSomething(choice)" class="form-control" id="basicSelect" [ngModelOptions]="{standalone: true}">
+                                              <option>Select Option</option>
+                                              <option value="0">Insurance</option>
+                                              <option value="1">ShowRoom</option>
+                                              <option value="2">Company Provider</option>
+                                              <option value="3">Individual Provider</option>
+                                              <option value="4">Offline Provider</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+                                <div *ngIf="insurance2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Insurance Info</h4>
 
                                 <div class="form-group">
-                                    <label for="userinput5">Company Name</label>
+                                    <label for="userinput5">Insurance Company Name</label>
                                     <input class="form-control border-primary" type="text"  id="userinput5" >
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="userinput5">Legal Forms</label>
+                                    <label for="userinput5">Insurance Company Legal Forms</label>
                                     <input class="form-control border-primary" type="file"  id="userinput5" >
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="userinput5">Contact Number</label>
+                                    <label for="userinput5">Insurance Contact Number</label>
                                     <input class="form-control border-primary" type="number"  id="userinput5" >
                                 </div>
 
@@ -187,36 +413,242 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="userinput5">Username</label>
+                                    <label for="userinput5">Insurance Company Username</label>
                                     <input class="form-control border-primary" type="text"  id="userinput5" >
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="userinput5">Password</label>
+                                    <label for="userinput5">Insurance Company Password</label>
                                     <input class="form-control border-primary" type="text"  id="userinput5" >
                                 </div>                                
 
 
+
+
+<!-- 
+                                <div *ngIf="provider" class="form-group">
+                                    <label for="userinput5">No of Drivers</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>      -->                           
+
+
+                        </div>
+
+
+                        <!--showroom-->
+ <div *ngIf="showroom2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Showroom Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Legal Forms</label>
+                                    <input class="form-control border-primary" type="file"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Contact Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+
                                 <div class="form-group">
                                         <fieldset class="form-group">
-                                            <label for="basicSelect">User's Role</label>
-                                            <select [ngModel]="" class="form-control" id="basicSelect">
-                                              <option>Select Option</option>
-                                              <option value="0">Insurance</option>
-                                              <option value="1">ShowRoom</option>
-                                              <option value="2">Provider</option>
+                                            <label for="basicSelect">Choose Package</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Package</option>
+                                              <option selected>Package 1</option>
+                                              <option>Package 2</option>
+                                              <option>Package 3</option>
+                                              <option>Package 4</option>
                                             </select>
                                         </fieldset>   
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Username</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>                                
+
+
+
+
+<!-- 
                                 <div *ngIf="provider" class="form-group">
+                                    <label for="userinput5">No of Drivers</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>      -->                           
+
+
+                        </div>
+                        <!--showroom-->
+
+
+                        <!--provider company-->
+
+ <div *ngIf="provider2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Provider Company Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Legal Forms</label>
+                                    <input class="form-control border-primary" type="file"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Contact Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Choose Package</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Package</option>
+                                              <option selected>Package 1</option>
+                                              <option>Package 2</option>
+                                              <option>Package 3</option>
+                                              <option>Package 4</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Username</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>                                
+
+
+
+
+
+                                <div  class="form-group">
                                     <label for="userinput5">No of Drivers</label>
                                     <input class="form-control border-primary" type="number"  id="userinput5" >
                                 </div>                                
 
 
+                        </div>
 
+                        <!--provider-->
+
+
+
+                        <!--individual Provider-->
+
+ <div *ngIf="providerindv2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i>Individual Provider Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Legal Forms</label>
+                                    <input class="form-control border-primary" type="file"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Choose Package</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Package</option>
+                                              <option selected>Package 1</option>
+                                              <option>Package 2</option>
+                                              <option>Package 3</option>
+                                              <option>Package 4</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Username</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>                                
+
+                         
+
+
+                        </div>
+                        <!--individual provider-->
+
+
+
+                        <!--offline vendor-->
+ <div *ngIf="showoffline2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Offline Vendor Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor City</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor Area</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="userinput5">Offline Vendor District</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+
+                        </div>
+                        <!--offline vendor-->
                             </div>
 
                             <div class="form-actions right">

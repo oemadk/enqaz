@@ -891,10 +891,10 @@
   },
   "DashboardBar": {
     "labels": [
-      "Sport",
-      "Music",
-      "Travel",
-      "News"
+      "Cash",
+      "Credit Card",
+      "Points",
+      "Package"
     ],
     "series": [
       [

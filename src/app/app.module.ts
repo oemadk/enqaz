@@ -1,5 +1,5 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -83,6 +83,7 @@ import { CreateorderComponent } from './createorder/createorder.component';
 
 
     ],
+        schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     imports: [
     HttpClientModule,
         BrowserAnimationsModule,

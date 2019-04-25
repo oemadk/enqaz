@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
         <div class="card bg-primary">
-            <div class="card-body">
+            <div (click)="gotopendingorder()" class="card-body">
                 <div class="card-block pt-2 pb-0">
                     <div class="media">
                         <div class="media-body white text-left">
@@ -23,7 +23,7 @@
     </div>
     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
         <div class="card bg-warning">
-            <div class="card-body">
+            <div (click)="goToCustomers()" class="card-body">
                 <div class="card-block pt-2 pb-0">
                     <div class="media">
                         <div class="media-body white text-left">
@@ -46,7 +46,7 @@
 
     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
         <div class="card bg-success">
-            <div class="card-body">
+            <div (click)="goToCompletedOrders()" class="card-body">
                 <div class="card-block pt-2 pb-0">
                     <div class="media">
                         <div class="media-body white text-left">
@@ -89,11 +89,14 @@
         </div>
     </div>
 </div>
+
+
+
 <div class="row" matchHeight ="card">
     <div class="col-xl-6 col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title mb-0">Latest Orders</h4>
+                <h4 class="card-title mb-0">Running Orders</h4>
             </div>
             <div class="card-body">
                 <div class="card-block">
@@ -119,7 +122,7 @@
                                 </td>
                                     <td>Winch</td>
                                     <td>Cash</td>
-                                    <td><button class="btn btn-success btn-raised">View Orders</button></td>
+                                    <td><button (click)="onSelect(modal)" class="btn btn-success btn-raised">View Orders</button></td>
                                    
                                 </tr>
                                
@@ -140,8 +143,8 @@
                             <thead>
                                 <tr>
                                     <th>User Name</th>
-                                    <th>Service Type</th>
-                                    <th>Payment Method</th>
+                                    <th>Pickup Location</th>
+                                    <th>Phone Number</th>
                                     <th>View</th>
                                 </tr>
                             </thead>
@@ -156,9 +159,9 @@
 
 
                                 </td>
-                                    <td>Winch</td>
-                                    <td>Cash</td>
-                                    <td><button class="btn btn-success btn-raised">View Orders</button></td>
+                                    <td><img width="50px" src="assets/img/map2.jpg"></td>
+                                    <td>01111204333</td>
+                                    <td><button (click)="onSelect(modal2)" class="btn btn-success btn-raised">Assign Driver</button></td>
                                    
                                 </tr>
                                
@@ -173,67 +176,77 @@
 
 
 <div class="row" matchHeight ="card">
-    <div class="col-lg-4 col-md-12">
+    <div class="col-xl-12 col-lg-12">
         <div class="card">
-            <div class="card-header text-center pb-0">
-                <span class="font-medium-2 primary">Steps</span>
-                <h3 class="font-large-2 mt-1">3261</h3>
+            <div class="card-header">
+                <h4 class="card-title mb-0">Schedueled Orders</h4>
             </div>
             <div class="card-body">
-                <div id="donut-chart1" class="height-250 donut1">
-                    <x-chartist [data]="DonutChart1.data" [type]="DonutChart1.type" [options]="DonutChart1.options" [responsiveOptions]="DonutChart1.responsiveOptions"
-                        [events]="DonutChart1.events">
-                    </x-chartist>
-                </div>
-                <div class="card-block text-center">
-                    <span class="font-large-1 d-block mb-1">5000</span>
-                    <span class="primary font-medium-1">Steps Today's Target</span>
+                <div class="card-block">
+                    <table class="table table-responsive text-center animated fadeInDown">
+                            <thead>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th>Tme</th>
+                                    <th>Service Type</th>
+                                    <th>Payment Method</th>
+                                    <th>View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p placement="top" ngbTooltip="Cash: 12123 Credit:1231 Due Amount:12">Hossam Emad</p> 
+                                    </td>
+                                    <td>12:00 AM on 7/12/2019</td>
+                                    <td>Winch</td>
+                                    <td>Cash</td>
+                                    <td><button (click)="onSelect(modal)" class="btn btn-success btn-raised">View Order</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-4 col-md-12">
-        <div class="card">
-            <div class="card-header text-center pb-0">
-                <span class="font-medium-2 warning">Distance</span>
-                <h3 class="font-large-2 mt-1">7.6
-                    <span class="font-medium-1 grey darken-1 text-bold-400">miles</span>
-                </h3>
-            </div>
-            <div class="card-body">
-                <div id="donut-chart2" class="height-250 donut2">
-                    <x-chartist [data]="DonutChart2.data" [type]="DonutChart2.type" [options]="DonutChart2.options" [responsiveOptions]="DonutChart2.responsiveOptions"
-                        [events]="DonutChart2.events">
-                    </x-chartist>
-                </div>
-                <div class="card-block text-center">
-                    <span class="font-large-1 d-block mb-1">10</span>
-                    <span class="warning font-medium-1">Miles Today's Target</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-12">
-        <div class="card">
-            <div class="card-header text-center pb-0">
-                <span class="font-medium-2 danger">Calories</span>
-                <h3 class="font-large-2 mt-1">4,025
-                    <span class="font-medium-1 grey darken-1 text-bold-400">kcal</span>
-                </h3>
-            </div>
-            <div class="card-body">
-                <div id="donut-chart3" class="height-250 donut3">
-                    <x-chartist [data]="DonutChart3.data" [type]="DonutChart3.type" [options]="DonutChart3.options" [responsiveOptions]="DonutChart3.responsiveOptions"
-                        [events]="DonutChart3.events">
-                    </x-chartist>
-                </div>
-                <div class="card-block text-center">
-                    <span class="font-large-1 d-block mb-1">5000</span>
-                    <span class="danger font-medium-1">kcla Today's Target</span>
+
+</div>
+
+    <div class="row" matchHeight="card">
+        <div class="col-xl-6 col-lg-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="px-3 py-3">
+                        <div class="media">
+                            <div class="media-body text-left">
+                                <h3 class="mb-1 danger">1422</h3>
+                                <span>iOS Downloads</span>
+                            </div>
+                            <div class="media-right align-self-center">
+                                <i class="icon-cloud-download danger font-large-2 float-right"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="col-xl-6 col-lg-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="px-3 py-3">
+                        <div class="media">
+                            <div class="media-body text-left">
+                                <h3 class="mb-1 success">3122</h3>
+                                <span>Android Downloads</span>
+                            </div>
+                            <div class="media-right align-self-center">
+                                <i class="icon-cloud-download success font-large-2 float-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 
 
@@ -250,11 +263,11 @@
     <div class="col-xl-4 col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Statistics</h4>
+                <h4 class="card-title">Staistics</h4>
             </div>
             <div class="card-body">
 
-                <p class="font-medium-2 text-muted text-center">Hobbies</p>
+                <p class="font-medium-2 text-muted text-center">Money income Statistic</p>
                 <div id="bar-chart" class="height-250 BarChartShadow BarChart">
                     <x-chartist class="" [data]="BarChart.data" [type]="BarChart.type" [options]="BarChart.options"
                      [responsiveOptions]="BarChart.responsiveOptions" [events]="BarChart.events">
@@ -265,23 +278,23 @@
                     <div class="row">
                         <div class="col text-center">
                             <span class="gradient-pomegranate d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-                            <span class="font-large-1 d-block mb-2">48</span>
-                            <span>Sport</span>
+                            <span class="font-large-1 d-block mb-2">48%</span>
+                            <span></span>
                         </div>
                         <div class="col text-center">
                             <span class="gradient-green-tea d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-                            <span class="font-large-1 d-block mb-2">9</span>
-                            <span>Music</span>
+                            <span class="font-large-1 d-block mb-2">9%</span>
+                            <span></span>
                         </div>
                         <div class="col text-center">
                             <span class="gradient-blackberry d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-                            <span class="font-large-1 d-block mb-2">26</span>
-                            <span>Travel</span>
+                            <span class="font-large-1 d-block mb-2">26%</span>
+                            <span></span>
                         </div>
                         <div class="col text-center">
                             <span class="gradient-ibiza-sunset d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-                            <span class="font-large-1 d-block mb-2">17</span>
-                            <span>News</span>
+                            <span class="font-large-1 d-block mb-2">17%</span>
+                            <span></span>
                         </div>
                     </div>
                 </div>
@@ -291,7 +304,7 @@
     <div class="col-xl-4 col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title mb-0">User List</h4>
+                <h4 class="card-title mb-0">New Subscribers List</h4>
             </div>
             <div class="card-body">
                 <div class="card-block">
@@ -300,14 +313,11 @@
                             <img alt="96x96" class="media-object d-flex mr-3 bg-primary height-50 rounded-circle" src="assets/img/portrait/small/avatar-s-12.png">
                         </a>
                         <div class="media-body">
-                            <h4 class="font-medium-1 mt-1 mb-0">Jessica Rice</h4>
-                            <p class="text-muted font-small-3">UX Designer</p>
+                            <h4 class="font-medium-1 mt-1 mb-0">Ahmed Farouk</h4>
+                            <p class="text-muted font-small-3">Insurance</p>
                         </div>
                         <div class="mt-1">
-                            <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                <input type="checkbox" class="custom-control-input" checked>
-                                <span class="custom-control-indicator"></span>
-                            </label>
+                    01111204333
                         </div>
                     </div>
                     <div class="media mb-1">
@@ -315,14 +325,11 @@
                             <img alt="96x96" class="media-object d-flex mr-3 bg-danger height-50 rounded-circle" src="assets/img/portrait/small/avatar-s-11.png">
                         </a>
                         <div class="media-body">
-                            <h4 class="font-medium-1 mt-1 mb-0">Jacob Rios</h4>
-                            <p class="text-muted font-small-3">HTML Developer</p>
+                            <h4 class="font-medium-1 mt-1 mb-0">Tamer Hosny</h4>
+                            <p class="text-muted font-small-3">Show Room</p>
                         </div>
                         <div class="mt-1">
-                            <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                            </label>
+                    01111204333
                         </div>
                     </div>
                     <div class="media mb-1">
@@ -330,46 +337,15 @@
                             <img alt="96x96" class="media-object d-flex mr-3 bg-success height-50 rounded-circle" src="assets/img/portrait/small/avatar-s-3.png">
                         </a>
                         <div class="media-body">
-                            <h4 class="font-medium-1 mt-1 mb-0">Russell Delgado</h4>
-                            <p class="text-muted font-small-3">Database Designer</p>
+                            <h4 class="font-medium-1 mt-1 mb-0">Pablo Escobar</h4>
+                            <p class="text-muted font-small-3">Provider</p>
                         </div>
                         <div class="mt-1">
-                            <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                            </label>
+                    01111204333
                         </div>
                     </div>
-                    <div class="media mb-1">
-                        <a> 
-                            <img alt="96x96" class="media-object d-flex mr-3 bg-warning height-50 rounded-circle" src="assets/img/portrait/small/avatar-s-6.png">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="font-medium-1 mt-1 mb-0">Sara McDonald</h4>
-                            <p class="text-muted font-small-3">Team Leader</p>
-                        </div>
-                        <div class="mt-1">
-                            <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                <input type="checkbox" class="custom-control-input" checked>
-                                <span class="custom-control-indicator"></span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="media mb-1">
-                        <a> 
-                                <img alt="96x96" class="media-object d-flex mr-3 bg-info height-50 rounded-circle" src="assets/img/portrait/small/avatar-s-18.png">
-                            </a>
-                        <div class="media-body">
-                            <h4 class="font-medium-1 mt-1 mb-0">Janet Lucas</h4>
-                            <p class="text-muted font-small-3">Project Manger</p>
-                        </div>
-                        <div class="mt-1">
-                            <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                            </label>
-                        </div>
-                    </div>
+
+
                     <div class="action-buttons mt-2 text-center">
                         <a class="btn btn-raised gradient-blackberry py-2 px-4 white mr-2">Add New</a>
                     </div>
@@ -662,3 +638,327 @@
     </div>
 </div>
  -->
+
+
+ <ng-template #modal let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Hossam's Request</h4>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">                      
+
+                        <form class="form">
+                            <div class="form-body">
+                                <h4 class="form-section"><i class="ft-info"></i> About Hossam</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Name</label>
+                                            <p class="form-control-static" id="staticInput">Hossam El-Hariry</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Email Address</label>
+                                            <p class="form-control-static" id="staticInput">hossamemad@gmail.com</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Phone Number</label>
+                                            <p class="form-control-static" id="staticInput">01111204333</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Address</label>
+                                            <p class="form-control-static" id="staticInput">47 Eleco Zahraa El-Maadi</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h4 class="form-section"><i class="ft-mail"></i> Request Info</h4>
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Request ID </label>
+                                            <p class="form-control-static" id="staticInput">1241231</p>
+                                        </fieldset>
+                            
+                                </div>
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Service Type </label>
+                                            <p class="form-control-static" id="staticInput">Winch</p>
+                                        </fieldset>
+                            
+                                </div>
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                    
+
+                                            <label for="disabledInput">Pickup Location</label>
+                                            <p style="display: inline-block;">Lng:30.0071891</p>
+                                            <p style="display: inline-block;">Lat:30.9723488</p>
+
+                                            <img src="assets/img/map2.jpg" width="400px">
+                            </fieldset>
+                            
+                                </div>
+
+
+                             <div class="form-group">
+                                        <fieldset class="form-group">
+                                    
+
+                                            <label for="disabledInput">Drop off Location</label>
+                                            <p style="display: inline-block;">Lng:30.0071891</p>
+                                            <p style="display: inline-block;">Lat:30.9723488</p>
+
+                                            <img src="assets/img/map2.jpg" width="400px">
+                            </fieldset>
+                            
+                                </div>
+
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                    
+
+                                            <label for="disabledInput">Track Trip</label>
+                                            <img src="assets/img/map2.jpg" width="400px">
+                            </fieldset>
+                            
+                                </div>
+
+
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')"  type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Cancel
+                                </button>
+                                <button  type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+                                <button  type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i>Assign Driver
+                                </button>
+                            </div>
+                        </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</ng-template>
+
+
+
+<!-- <section id="map">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="content-header">Google Map</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-block mt-2">
+                        <agm-map [latitude]="lat" [longitude]="lng">
+                            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                        </agm-map>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        -->     
+
+
+
+ <ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Hossam's Request</h4>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">                      
+
+                        <form class="form">
+                            <div class="form-body">
+                                <h4 class="form-section"><i class="ft-info"></i> About Hossam</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Name</label>
+                                            <p class="form-control-static" id="staticInput">Hossam El-Hariry</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Email Address</label>
+                                            <p class="form-control-static" id="staticInput">hossamemad@gmail.com</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Phone Number</label>
+                                            <p class="form-control-static" id="staticInput">01111204333</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Address</label>
+                                            <p class="form-control-static" id="staticInput">47 Eleco Zahraa El-Maadi</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h4 class="form-section"><i class="ft-mail"></i> Request Info</h4>
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Request ID </label>
+                                            <p class="form-control-static" id="staticInput">1241231</p>
+                                        </fieldset>
+                            
+                                </div>
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Service Type </label>
+                                            <p class="form-control-static" id="staticInput">Winch</p>
+                                        </fieldset>
+                            
+                                </div>
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                    
+
+                                            <label for="disabledInput">Pickup Location</label>
+                                            <p style="display: inline-block;">Lng:30.0071891</p>
+                                            <p style="display: inline-block;">Lat:30.9723488</p>
+
+                                            <img src="assets/img/map2.jpg" width="400px">
+                            </fieldset>
+                            
+                                </div>
+
+
+                             <div class="form-group">
+                                        <fieldset class="form-group">
+                                    
+
+                                            <label for="disabledInput">Drop off Location</label>
+                                            <p style="display: inline-block;">Lng:30.0071891</p>
+                                            <p style="display: inline-block;">Lat:30.9723488</p>
+
+                                            <img src="assets/img/map2.jpg" width="400px">
+                            </fieldset>
+                            
+                                </div>
+
+
+
+
+                                <h4 class="form-section"><i class="ft-mail"></i> Assign Driver</h4>
+
+
+                             
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Select an Online Driver</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Omar</option>
+                                              <option value="confirmed" >Kareem</option>
+                                              <option value="pending">Mohamed</option>
+                                              <option value="cancelled">Mostafa</option>
+                                              <option value="archived">Donia</option>
+                                              <option value="archived">Laila</option>
+                                              <option value="archived">hazlaoom</option>
+                                              <option value="archived">Mariam</option>
+
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+
+                                Or
+
+
+                            <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Select an Offline Vendor Driver</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Tarek</option>
+                                              <option value="confirmed" >Belaal</option>
+                                              <option value="pending">Ehab</option>
+                                              <option value="cancelled">Soaad</option>
+                                              <option value="archived">Peter</option>
+                                              <option value="archived">Christopher</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+                            </div>
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Offline Vendor Total Price </label>
+                                           <input type="text" name="">
+                                        </fieldset>
+                            
+                                </div>
+
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')"  type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Cancel
+                                </button>
+                                <button  type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+                                <button  type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Go To Order
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</ng-template>

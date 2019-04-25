@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from "ng-chartist/dist/chartist.component";
-
+import { NewordersComponent } from '../../neworders/neworders.component';
 declare var require: any;
+import { Router, ActivatedRoute } from "@angular/router";
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 const data: any = require('../../shared/data/chartist.json');
 
@@ -24,6 +27,72 @@ export interface Chart {
 })
 
 export class Dashboard2Component {
+      lat: number = 30.0071891;
+  lng: number = 30.9723488;
+    rows:any[] = [];
+    selected: any[] = [];
+      closeResult: string;
+    modalReference: any;
+    token;
+    temp = [];
+    constructor(private router: Router,
+        private route: ActivatedRoute,
+        private modalService: NgbModal
+        ){
+
+    }
+    gotopendingorder(){
+    this.router.navigate(['/orders/new']);
+}
+
+    goToCustomers(){
+    this.router.navigate(['/customers']);
+}
+
+    goToCompletedOrders(){
+    this.router.navigate(['/orders/completed']);
+    }
+
+       onSelect(modal) {
+          this.modalService.open(modal).result.then((result) => {
+     console.log(event)
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+onActivate($event){
+}
+open(content){
+    console.log(event)
+
+this.modalService.open(content).result.then((result) => {
+     console.log(event)
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+}
+
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
+  // public go(a){
+
+  //   this.router.navigate(['orderpage/']);
+
+  // }
+
+
+
     // Line chart configuration Starts
     WidgetlineChart: Chart = {
         type: 'Line', data: data['WidgetlineChart2'],

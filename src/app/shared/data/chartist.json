@@ -891,10 +891,10 @@
   },
   "DashboardBar": {
     "labels": [
-      "Cash",
-      "Credit Card",
-      "Points",
-      "Package"
+      "Vendor",
+      "Showroom",
+      "Individual",
+      "Company"
     ],
     "series": [
       [

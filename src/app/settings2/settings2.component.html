@@ -38,7 +38,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr  (click)="addNew(modal3)">
                                     <td>1</td>
                                     <td>Winch</td>
                                     <td>12 EGP</td>
@@ -136,6 +136,103 @@
 								<div class="form-group">
 									<label for="userinput5">Price Per Minute</label>
 									<input class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+
+
+
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+
+
+<ng-template #modal3 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Add a new Setting</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> Setting Info</h4>
+								<div class="form-group">
+											                                <fieldset class="form-group">
+		                                    <label for="basicSelect">Choose Service</label>
+		                                    <select class="form-control" id="basicSelect">
+		                                      <option>Select Option</option>
+		                                      <option selected>Winch</option>
+		                                      <option>Oil</option>
+		                                      <option>Tires</option>
+
+		                                    </select>
+		                                </fieldset>   
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Setting's Name</label>
+									<input value="Winch" class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Service Cancellation Fees</label>
+									<input value="12" class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">1st Radius</label>
+									<input value="1212 EGP" class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+
+								<div class="form-group">
+									<label for="userinput5">1st Radius KM Price</label>
+									<input value="122" class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">2nd Radius</label>
+									<input value="300 EGP" class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+								<div class="form-group">
+									<label for="userinput5">2nd Radius KM Price</label>
+									<input value="400" class="form-control border-primary" type="number"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Enqaz High Limit</label>
+									<input value="High Limit" class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Enqaz Low Limit</label>
+									<input value="Low Limit" class="form-control border-primary" type="text"  id="userinput5" >
+								</div>
+
+								<div class="form-group">
+									<label for="userinput5">Price Per Minute</label>
+									<input value="12" class="form-control border-primary" type="number"  id="userinput5" >
 								</div>
 
 

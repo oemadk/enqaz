@@ -6,7 +6,7 @@
         <div class="col-6">
         	 <div class="content-header" style="float: right;">
         									<button  (click)="addNew(modal2)" type="button" class="btn btn-raised btn-primary">
-									<i class="fa fa-plus"></i> Add A New Setting
+									<i class="fa fa-plus"></i> Add A New Emergency Code
 								</button>
 							</div>
 
@@ -17,7 +17,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Settings</h4>
+                    <h4 class="card-title">Emergency Codes</h4>
                 </div>
                 <div class="card-body">
                     <div class="card-block">
@@ -89,52 +89,58 @@
 		                                </fieldset>   
 								</div>
 
-								<div class="form-group">
-									<label for="userinput5">Setting's Name</label>
-									<input class="form-control border-primary" type="text"  id="userinput5" >
-								</div>
-
-								<div class="form-group">
-									<label for="userinput5">Service Cancellation Fees</label>
-									<input class="form-control border-primary" type="number"  id="userinput5" >
-								</div>
-
-								<div class="form-group">
-									<label for="userinput5">1st Radius</label>
-									<input class="form-control border-primary" type="text"  id="userinput5" >
-								</div>
+							<div class="form-group">
+								<fieldset class="form-group">
+		                                    <label for="basicSelect">Choose Discount Rate Option</label>
+		                                    <select [(ngModel)]="choice" (ngModelChange)="doSomething(choice)"  class="form-control" id="basicSelect" [ngModelOptions]="{standalone: true}">
+		                                      <option>Select Option</option>
+		                                      <option value="0">Percentege</option>
+		                                      <option value="1">Fixed Amount</option>
+		                                    </select>
+		                        </fieldset>   
 
 
-								<div class="form-group">
-									<label for="userinput5">1st Radius KM Price</label>
-									<input class="form-control border-primary" type="number"  id="userinput5" >
-								</div>
+		                        <div *ngIf="perc">
+                            <div class="input-group">
+                                <!-- <span class="input-group-addon">$</span> -->
+                                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">%</span>
 
-								<div class="form-group">
-									<label for="userinput5">2nd Radius</label>
-									<input class="form-control border-primary" type="text"  id="userinput5" >
-								</div>
-								<div class="form-group">
-									<label for="userinput5">2nd Radius KM Price</label>
-									<input class="form-control border-primary" type="number"  id="userinput5" >
-								</div>
+                            </div>
 
-								<div class="form-group">
-									<label for="userinput5">Enqaz High Limit</label>
-									<input class="form-control border-primary" type="text"  id="userinput5" >
-								</div>
 
-								<div class="form-group">
-									<label for="userinput5">Enqaz Low Limit</label>
-									<input class="form-control border-primary" type="text"  id="userinput5" >
-								</div>
 
-								<div class="form-group">
-									<label for="userinput5">Price Per Minute</label>
+		                        </div>
+
+		                        <div *ngIf="fixed">
+		                   <div class="input-group">
+                                <!-- <span class="input-group-addon">$</span> -->
+                                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+
+                            </div>
+
+                            	<div class="form-group">
+									<label for="userinput5">Minimum Amount of Money:</label>
 									<input class="form-control border-primary" type="number"  id="userinput5" >
 								</div>
 
 
+		                        </div>
+								</div>
+
+
+                            	<div class="form-group">
+									<label for="userinput5">Start Date</label>
+									<input class="form-control border-primary" type="Date"  id="userinput5" >
+								</div>
+
+
+
+								<div class="form-group">
+									<label for="userinput5">End Date</label>
+									<input class="form-control border-primary" type="Date"  id="userinput5" >
+								</div>
 
 
 
@@ -174,7 +180,7 @@
 							<div class="form-body">
 
 								<h4 class="form-section"><i class="ft-mail"></i> Setting Info</h4>
-    <div class="col-md-12 col-lg-6">
+    <div class="col-md-12 col-lg-12">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Type User Name</h4>
@@ -185,7 +191,6 @@
               <input type="text" class="form-control format mb-3" [(ngModel)]="modelFormat" [ngbTypeahead]="search" [resultFormatter]="formatter"
               placeholder="Search for alabama" />
             </div>
-            <p>Model: {{ modelFormat | json }}</p>
           </div>
         </div>
       </div>

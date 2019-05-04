@@ -132,6 +132,16 @@ constructor(private router: Router,
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
+
+        addNew(modal) {
+        console.log(event);
+        this.modalService.open(modal).result.then((result) => {
+   console.log(event)
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
 onActivate($event){
 }
 open(content){

@@ -252,4 +252,27 @@ const myInterval = Observable.interval(3000);
   }
   
 
+insurance = 1;
+
+provider = 0;
+
+showroom = 0;
+
+
+insuranceon(){
+  this.insurance = 1;
+  this.provider = 0;
+  this.showroom = 0;
+}
+showroomon(){
+  this.insurance = 0;
+  this.provider = 0;
+  this.showroom = 1;
+}
+
+showProviders(){
+  this.insurance = 0;
+  this.provider = 1;
+  this.showroom = 0;
+}
 }

@@ -116,7 +116,7 @@
 
 
 
-                                    <p placement="top" ngbTooltip="Cash: 12123 Credit:1231 Due Amount:12">Hossam Emad</p> 
+                                    <p placement="top" ngbTooltip="Cash: 12123 Credit:1231 Due Amount:12"><button (click)="addNew2(modal9)" class="btn btn-success btn-raised">Hossam Emad</button></p> 
 
 
                                 </td>
@@ -310,7 +310,7 @@
                 <div class="card-block">
                     <div class="media mb-1">
                         <a> 
-                            <img alt="96x96" class="media-object d-flex mr-3 bg-primary height-50 rounded-circle" src="assets/img/portrait/small/avatar-s-12.png">
+                            <img (click)="addNew2(modal10)" alt="96x96" class="media-object d-flex mr-3 bg-primary height-50 rounded-circle" src="assets/img/portrait/small/avatar-s-12.png">
                         </a>
                         <div class="media-body">
                             <h4 class="font-medium-1 mt-1 mb-0">Ahmed Farouk</h4>
@@ -346,9 +346,9 @@
                     </div>
 
 
-                    <div class="action-buttons mt-2 text-center">
+<!--                     <div class="action-buttons mt-2 text-center">
                         <a class="btn btn-raised gradient-blackberry py-2 px-4 white mr-2">Add New</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -749,6 +749,47 @@
                                 </div>
 
 
+  <h4 class="form-section"><i class="ft-info"></i> Driver Info</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Name</label>
+                                            <p class="form-control-static" id="staticInput">Ahmed Mohamed</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Email Address</label>
+                                            <p class="form-control-static" id="staticInput">amohamed@gmail.com</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Phone Number</label>
+                                            <p class="form-control-static" id="staticInput">011112234234</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Address</label>
+                                            <p class="form-control-static" id="staticInput">47 Eleco Zahraa El-Maadi</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
 
                             <div class="form-actions right">
                                 <button (click)="c('Close click')"  type="button" class="btn btn-raised btn-warning mr-1">
@@ -961,4 +1002,173 @@
                 </div>
             </div>
         </div>
+</ng-template>
+
+
+
+
+
+<ng-template #modal9 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Customer's History</h4>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">                      
+
+                        <form class="form">
+                            <div class="form-body">
+
+                                <h4 class="form-section"><i class="ft-mail"></i> Hossam Emad</h4>
+
+                            <section id="extended">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Customer History</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>service type</th>
+                                    <th>Driver Name</th>
+                                    <th>Drop Off Location</th>
+                                    <th>Pickup Location</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Hossam Emad</td>
+                                    <td>Winch</td>
+                                    <td>Kareem Mohamed</td>
+                                    <td><img style="width: 50px" src="assets/img/map2.jpg"></td>
+                                    <td><img style="width: 50px" src="assets/img/map2.jpg"></td>
+                                    <td>133 EGP</td>
+
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                            </div>
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Close
+                                </button>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</ng-template>
+
+
+
+
+
+
+<ng-template  #modal10 let-modal let-c="close" style="background-color: transparent;">
+
+
+    <div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Customer's History</h4>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">                      
+
+                        <form class="form">
+                            <div class="form-body">
+
+                                <h4 class="form-section"><i class="ft-mail"></i> Ahmed Farouk</h4>
+
+                          
+        <section id="extended" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Insurance Vendors</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Company Name</th>
+                                    <th>Package</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Status</th>
+                                    <th>Number of Users</th>
+                                    <th>Vendor Orders</th>
+                                    <th>Renewal Reminder</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Metanoia</td>
+                                    <td>Starter Package</td>
+                                    <td>20/04/2019</td>
+                                    <td>4/06/2019</td>
+                                                                        <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Activate</button>
+
+                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Deativate</button>
+                                    </td>
+                                    <td>44</td>
+                                    <td>11</td>
+
+                                    <td>
+                                                  <a (click)="resetpassword()" class="info p-0" data-original-title="" title="">
+                                            <i class="ft-lock font-medium-3 mr-2"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                            </div>
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Close
+                                </button>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </ng-template>

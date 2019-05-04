@@ -44,7 +44,10 @@ export class Dashboard2Component {
     gotopendingorder(){
     this.router.navigate(['/orders/new']);
 }
+addNew2(modal){
+  this.modalService.open(modal,  { windowClass : "myCustomModalClass"});
 
+}
     goToCustomers(){
     this.router.navigate(['/customers']);
 }

@@ -11,14 +11,32 @@
 
 		</div>
 	</div>
+<div class="row">
+                <div class="col-sm-2">
+                                <h4 class="form-section" style="    font-size: 1.1rem;
+"><i class="ft-mail"></i> Choose Vendor Type</h4>
+
+              <button style="display: block; width: 100%"  (click)="insuranceon()" type="button" class="btn btn-raised btn-primary">
+                                     Insurance 
+            </button>
+
+                          <button style="display: block; width: 100%" (click)="showroomon()" type="button" class="btn btn-raised btn-primary">
+                                    ShowRoom 
+            </button>
 
 
-	        <section id="extended" class="animation-drop-down">
+ <button style="display: block; width: 100%" (click)="showProviders()" type="button" class="btn btn-raised btn-primary">
+                                    Provider 
+            </button>
+
+    </div>
+    <div class="col-sm-10" *ngIf="insurance">
+                <section id="extended" class="animation-drop-down">
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Packages</h4>
+                    <h4 class="card-title"> Insurance Packages</h4>
                 </div>
                 <div class="card-body">
                     <div class="card-block">
@@ -54,6 +72,103 @@
         </div>
     </div>
 </section>
+
+</div>
+
+
+    <div class="col-sm-10" *ngIf="showroom">
+                <section id="extended" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Showroom Packages</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Package Name</th>
+                                    <th>Duration</th>
+                                    <th>Price Per User</th>
+                                    <th>No Of Users</th>
+                                    <th>Package Price</th>
+                                    <th>View Users on this package</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Golden Package</td>
+                                    <td>1 year</td>
+                                    <td>12 EGP</td>
+                                    <td>unlimited</td>
+                                    <td>1200 EGP</td>
+
+                                    <td><button (click)="usersonpackage(modal3)" class="btn btn-success btn-raised">Activate</button></td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+
+    <div class="col-sm-10" *ngIf="provider">
+                <section id="extended" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Provider Packages</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Package Name</th>
+                                    <th>Duration</th>
+                                    <th>Price Per Driver</th>
+                                    <th>No Of Drivers</th>
+                                    <th>Package Price</th>
+                                    <th>View Drivers on this package</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Golden Package</td>
+                                    <td>1 year</td>
+                                    <td>12 EGP</td>
+                                    <td>unlimited</td>
+                                    <td>1200 EGP</td>
+
+                                    <td><button (click)="usersonpackage(modal3)" class="btn btn-success btn-raised">Activate</button></td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+
+
 
 
 

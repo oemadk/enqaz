@@ -3630,3 +3630,10 @@
     transition: none !important;
   }
 }
+
+
+
+::ng-deep .myCustomModalClass .modal-dialog { 
+     max-width: 80%;
+     width: 80%;
+}

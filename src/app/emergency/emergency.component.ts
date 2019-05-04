@@ -221,4 +221,24 @@ sendtoall(){
 	        alertFunctions.typeSuccess('SMS Sent to all users');
 
 }
+
+
+
+perc = 0;
+fixed= 0;
+doSomething(choice){
+  if(choice == 0){
+    //insurance
+
+    this.perc = 1;
+    this.fixed = 0;
+
+
+  } else if(choice == 1){
+    //showroom
+    this.perc = 0;
+    this.fixed = 1;
+  }
+
+}
 }

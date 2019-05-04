@@ -196,3 +196,9 @@
 agm-map {
   height: 300px;
 }
+
+
+::ng-deep .myCustomModalClass .modal-dialog { 
+     max-width: 80%;
+     width: 80%;
+}

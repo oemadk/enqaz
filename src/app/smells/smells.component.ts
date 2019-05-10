@@ -61,6 +61,27 @@ constructor(private modalService: NgbModal, private router: Router,
     });
   }
 
+normal = 1;
+insurance = 0;
+showroom = 0;
+normalCustomers(){
+  this.normal = 1;
+  this.insurance = 0;
+  this.showroom = 0;
+}
+
+showRoomCustomers(){
+  this.showroom = 1;
+  this.insurance = 0;
+  this.normal = 0;
+}
+
+showInsuranceCustomers(){
+  this.insurance = 1;
+  this.showroom = 0;
+  this.normal = 0;
+}
+
 addNew2(modal){
   this.modalService.open(modal,  { windowClass : "myCustomModalClass"});
 

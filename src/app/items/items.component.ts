@@ -162,6 +162,10 @@ doSomething(choice){
     });
   }
 
+  addNew2(modal){
+  this.modalService.open(modal,  { windowClass : "myCustomModalClass"});
+
+}
   addNew(modal2){
             this.modalService.open(modal2).result.then((result) => {
    console.log(event)

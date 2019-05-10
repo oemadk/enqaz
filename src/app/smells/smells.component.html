@@ -13,12 +13,35 @@
 
         </div>
     </div>
-<section id="extended">
+
+    <div class="row">
+                <div class="col-sm-2">
+                                <h4 class="form-section" style="    font-size: 1.1rem;
+"><i class="ft-mail"></i> Choose Customer Type</h4>
+
+              <button style="display: block; width: 100%"  (click)="normalCustomers()" type="button" class="btn btn-raised btn-primary">
+                                     Normal 
+            </button>
+
+                          <button style="display: block; width: 100%" (click)="showRoomCustomers()" type="button" class="btn btn-raised btn-primary">
+                                    ShowRoom
+            </button>
+
+
+ <button style="display: block; width: 100%" (click)="showInsuranceCustomers()" type="button" class="btn btn-raised btn-primary">
+                                    Insurance
+            </button>
+
+    </div>
+
+
+    <div class="col-sm-10">
+        <section id="extended" *ngIf="normal" class="animation-drop-down">
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Customers</h4>
+                    <h4 class="card-title">Normal Customers</h4>
                 </div>
                 <div class="card-body">
                     <div class="card-block">
@@ -37,7 +60,7 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td (click)="addNew2(modal4)">Omar EMad</td>
+                                    <td (click)="addNew2(modal4)"><button>Omar Emad</button></td>
                                     <td>01111204333</td>
                                     <td>oemadk@gmail.com</td>
                                     <td><i style="color: gold;" class="ft-star"></i>
@@ -60,7 +83,12 @@
                                             <i class="ft-x font-medium-3 mr-2"></i>
                                         </a>
                                     </td>
-                                    <td (click)="addNew(modal5)">Make an Order</td>
+                                    <td (click)="addNew(modal5)">
+
+    <button type="button" class="btn btn-raised btn-warning mr-1">
+                                   Make an Order
+                                </button>
+                                   </td>
 
                                 </tr>
                                
@@ -72,6 +100,154 @@
         </div>
     </div>
 </section>
+
+
+<!--showroom-->
+
+ <section id="extended" *ngIf="showroom" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">ShowRoom Customers</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Rating</th>
+                                    <th>Vendor</th>
+                                    <th>Actions</th>
+                                    <th>Make Order</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td (click)="addNew2(modal4)"><button>Omar Emad</button></td>
+                                    <td>01111204333</td>
+                                    <td>oemadk@gmail.com</td>
+                                    <td><i style="color: gold;" class="ft-star"></i>
+                                    <i style="color: gold;" class="ft-star"></i>
+                                <i style="color: gold;" class="ft-star"></i>
+                            <i style="color: gold;" class="ft-star"></i>
+                        <i class="ft-star"></i></td>
+
+                        <td>Alliance</td>
+                                    <td>
+                                        <a class="info p-0" data-original-title="" title="">
+                                            <i class="ft-user font-medium-3 mr-2"></i>
+                                        </a>
+
+                                                  <a (click)="resetpassword()" class="info p-0" data-original-title="" title="">
+                                            <i class="ft-lock font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a (click)="onSelect(modal)" class="success p-0" data-original-title="" title="">
+                                            <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a class="danger p-0" data-original-title="" title="">
+                                            <i class="ft-x font-medium-3 mr-2"></i>
+                                        </a>
+                                    </td>
+                                    <td (click)="addNew(modal5)">
+
+    <button type="button" class="btn btn-raised btn-warning mr-1">
+                                   Make an Order
+                                </button>
+                                   </td>
+
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- insurance -->
+
+ <section id="extended" *ngIf="insurance" class="animation-drop-down">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Insurance Customers</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card-block">
+                        <table class="table table-responsive text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Rating</th>
+                                    <th>Vendor</th>
+                                    <th>Actions</th>
+                                    <th>Make Order</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td (click)="addNew2(modal4)"><button>Omar Emad</button></td>
+                                    <td>01111204333</td>
+                                    <td>oemadk@gmail.com</td>
+                                    <td><i style="color: gold;" class="ft-star"></i>
+                                    <i style="color: gold;" class="ft-star"></i>
+                                <i style="color: gold;" class="ft-star"></i>
+                            <i style="color: gold;" class="ft-star"></i>
+                        <i class="ft-star"></i></td>
+
+                        <td>El Masrya</td>
+                                    <td>
+                                        <a class="info p-0" data-original-title="" title="">
+                                            <i class="ft-user font-medium-3 mr-2"></i>
+                                        </a>
+
+                                                  <a (click)="resetpassword()" class="info p-0" data-original-title="" title="">
+                                            <i class="ft-lock font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a (click)="onSelect(modal)" class="success p-0" data-original-title="" title="">
+                                            <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a class="danger p-0" data-original-title="" title="">
+                                            <i class="ft-x font-medium-3 mr-2"></i>
+                                        </a>
+                                    </td>
+                                    <td (click)="addNew(modal5)">
+
+    <button type="button" class="btn btn-raised btn-warning mr-1">
+                                   Make an Order
+                                </button>
+                                   </td>
+
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>
+    </div>
+
+
+
 </section>
 <!-- Filter Datatable Options Ends -->
 

@@ -25,6 +25,26 @@
                             <p class="d-none">fullscreen</p>
                         </a>
                     </li>
+                                        <li class="nav-item" ngbDropdown placement="bottom-right">
+                        <a class="nav-link position-relative" id="dropdownBasic3" ngbDropdownToggle>
+                            <i class="ft-plus font-medium-3 blue-grey darken-4"></i>
+                            <p class="d-none">User Settings</p>
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                            <a  (click)="addNew(modal1)"  class="dropdown-item" href="javascript:;">
+                                <i class="ft-plus mr-2"></i>
+                                <span>New Vendor</span>
+                            </a>
+                            <a (click)="addNew(modal3)" class="dropdown-item py-1" href="javascript:;">
+                                <i class="ft-plus mr-2"></i>
+                                <span>Create New Order</span>
+                            </a>
+                            <a (click)="addNew(modal2)" class="dropdown-item py-1" href="javascript:;">
+                                <i class="ft-plus mr-2"></i>
+                                <span>Create New Customer</span>
+                            </a>
+                        </div>
+                    </li>
                     <li class="nav-item" ngbDropdown placement="bottom-right">
                         <a class="nav-link position-relative" id="dropdownBasic2" ngbDropdownToggle>
                             <i class="ft-bell font-medium-3 blue-grey darken-4"></i>
@@ -75,4 +95,475 @@
     </div>
 </nav>
 
+
+<ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Add a new Customer</h4>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">                      
+
+                        <form class="form">
+                            <div class="form-body">
+
+                                <h4 class="form-section"><i class="ft-mail"></i> Customer Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Customer's Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Customer's Email</label>
+                                    <input class="form-control border-primary" type="email"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Customer's Phone Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                            <label for="basicSelect">CarModel</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Option</option>
+                                              <option selected>BMW</option>
+                                              <option>Ferari</option>
+                                              <option>etc..</option>
+
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput8">Customer's Profile Picture</label>
+                                    <input type="file" id="userinput8" class="form-control border-primary" name="bio" placeholder="">
+                                </div>
+
+                            </div>
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Cancel
+                                </button>
+                                <button (click)="c('Close click')" type="button" class="btn btn-raised btn-primary mr-1">
+                                    <i class="ft-x"></i> Send Credentials by SMS to customer
+                                </button>
+                                <button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</ng-template>
+
+
+
+
+<ng-template #modal1 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="basic-layout-colored-form-control">Add a new Vendor</h4>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">                      
+
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Vendor's Role</label>
+                                            <select [(ngModel)]="choice" (ngModelChange)="doSomething(choice)" class="form-control" id="basicSelect" [ngModelOptions]="{standalone: true}">
+                                              <option>Select Option</option>
+                                              <option value="0">Insurance</option>
+                                              <option value="1">ShowRoom</option>
+                                              <option value="2">Company Provider</option>
+                                              <option value="3">Individual Provider</option>
+                                              <option value="4">Offline Provider</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+                                <div *ngIf="insurance2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Insurance Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Insurance Company Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Insurance Company Legal Forms</label>
+                                    <input class="form-control border-primary" type="file"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Insurance Contact Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Choose Package</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Package</option>
+                                              <option selected>Package 1</option>
+                                              <option>Package 2</option>
+                                              <option>Package 3</option>
+                                              <option>Package 4</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Insurance Company Username</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Insurance Company Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>                                
+
+
+
+
+<!-- 
+                                <div *ngIf="provider" class="form-group">
+                                    <label for="userinput5">No of Drivers</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>      -->                           
+
+
+                        </div>
+
+
+                        <!--showroom-->
+ <div *ngIf="showroom2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Showroom Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Legal Forms</label>
+                                    <input class="form-control border-primary" type="file"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Contact Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Choose Package</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Package</option>
+                                              <option selected>Package 1</option>
+                                              <option>Package 2</option>
+                                              <option>Package 3</option>
+                                              <option>Package 4</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Username</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Showroom Company Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>                                
+
+
+
+
+<!-- 
+                                <div *ngIf="provider" class="form-group">
+                                    <label for="userinput5">No of Drivers</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>      -->                           
+
+
+                        </div>
+                        <!--showroom-->
+
+
+                        <!--provider company-->
+
+ <div *ngIf="provider2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Provider Company Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Legal Forms</label>
+                                    <input class="form-control border-primary" type="file"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Contact Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Choose Package</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Package</option>
+                                              <option selected>Package 1</option>
+                                              <option>Package 2</option>
+                                              <option>Package 3</option>
+                                              <option>Package 4</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Username</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Provider Company Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>                                
+
+
+
+
+
+                                <div  class="form-group">
+                                    <label for="userinput5">No of Drivers</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>                                
+
+
+                        </div>
+
+                        <!--provider-->
+
+
+
+                        <!--individual Provider-->
+
+ <div *ngIf="providerindv2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i>Individual Provider Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Legal Forms</label>
+                                    <input class="form-control border-primary" type="file"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Choose Package</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Select Package</option>
+                                              <option selected>Package 1</option>
+                                              <option>Package 2</option>
+                                              <option>Package 3</option>
+                                              <option>Package 4</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Username</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Individual Provider Password</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>                                
+
+                         
+
+
+                        </div>
+                        <!--individual provider-->
+
+
+
+                        <!--offline vendor-->
+ <div *ngIf="showoffline2"  class="animation-drop-down">
+                                <h4 class="form-section"><i class="ft-mail"></i> Offline Vendor Info</h4>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor Name</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor Number</label>
+                                    <input class="form-control border-primary" type="number"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor City</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="userinput5">Offline Vendor Area</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="userinput5">Offline Vendor District</label>
+                                    <input class="form-control border-primary" type="text"  id="userinput5" >
+                                </div>
+
+
+
+                        </div>
+                        <!--offline vendor-->
+                            </div>
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Cancel
+                                </button>
+                                <button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</ng-template>
+
+
+
+
+<ng-template #modal3 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 30px;" class="col-lg-12 col-sm-12 col-md-12">
+
+   <h4 class="form-section"><i class="ft-mail"></i> Choose Service</h4>
+
+
+                             
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Select Service</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Winch</option>
+                                              <option value="confirmed" >Oil</option>
+                                              <option value="pending">Tires</option>
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+       <h4 class="form-section"><i class="ft-mail"></i> Choose Customer</h4>
+
+
+                             
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Select A Customer</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Omar</option>
+                                              <option value="confirmed" >Kareem</option>
+                                              <option value="pending">Mohamed</option>
+                                              <option value="cancelled">Mostafa</option>
+                                              <option value="archived">Donia</option>
+                                              <option value="archived">Laila</option>
+                                              <option value="archived">hazlaoom</option>
+                                              <option value="archived">Mariam</option>
+
+                                            </select>
+                                        </fieldset>   
+                                </div>
+               <h4 class="form-section"><i class="ft-mail"></i> Assign Driver</h4>
+
+
+                             
+                                <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">Select an Online Driver</label>
+                                            <select class="form-control" id="basicSelect">
+                                              <option>Omar</option>
+                                              <option value="confirmed" >Kareem</option>
+                                              <option value="pending">Mohamed</option>
+                                              <option value="cancelled">Mostafa</option>
+                                              <option value="archived">Donia</option>
+                                              <option value="archived">Laila</option>
+                                              <option value="archived">hazlaoom</option>
+                                              <option value="archived">Mariam</option>
+
+                                            </select>
+                                        </fieldset>   
+                                </div>
+
+
+                            <div class="form-actions right">
+                                <button (click)="c('Close click')"  type="button" class="btn btn-raised btn-warning mr-1">
+                                    <i class="ft-x"></i> Cancel
+                                </button>
+                                <button  type="button" class="btn btn-raised btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                </button>
+                            </div>
+</div>
+
+</ng-template>
 

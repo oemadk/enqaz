@@ -59,9 +59,7 @@
 
                                 </td>
                                     <td>144 EGP</td>
-                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Setteled</button>
-
-                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Not setteled</button></td>
+                                    <td><button (click)="addNew2(modal4)" class="btn btn-success btn-raised">Settle Order</button></td>
                                     <td><button class="btn btn-success btn-raised">View Orders</button></td>
                                    
                                 </tr>
@@ -92,9 +90,9 @@
 
                                 </td>
                                     <td>2000 EGP</td>
-                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Setteled</button>
+                                    <td><button (click)="addNew2(modal1)" class="btn btn-success btn-raised">Settel Order</button>
 
-                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Not setteled</button></td>
+                                </td>
                                     <td><button class="btn btn-success btn-raised">View Orders</button></td>
                                    
                                 </tr>
@@ -108,9 +106,7 @@
 
                                 </td>
                                     <td>200 EGP</td>
-                                    <td><button (click)="a = !a" *ngIf="a" class="btn btn-success btn-raised">Setteled</button>
-
-                                    <button (click)="a = !a" *ngIf="!a" class="btn btn-danger btn-raised">Not setteled</button></td>
+                                    <td><button (click)="addNew2(modal3)" class="btn btn-success btn-raised">Settle Order</button></td>
                                     <td><button class="btn btn-success btn-raised">View Orders</button></td>
                                    
                                 </tr>
@@ -199,11 +195,11 @@
 
 
 
-<ng-template #modal2 let-modal let-c="close" style="background-color: transparent;">
+<ng-template #modal1 let-modal let-c="close" style="background-color: transparent;">
 <div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title" id="basic-layout-colored-form-control">Add a new User</h4>
+					<h4 class="card-title" id="basic-layout-colored-form-control">Set Off Settelment</h4>
 				</div>
 				<div class="card-body">
 					<div class="px-3">						
@@ -211,45 +207,188 @@
 						<form class="form">
 							<div class="form-body">
 
-								<h4 class="form-section"><i class="ft-mail"></i> User Info</h4>
+								<h4 class="form-section"><i class="ft-mail"></i> Setoff</h4>
 
-								<div class="form-group">
-									<label for="userinput5">User's Name</label>
-									<input class="form-control border-primary" type="text"  id="userinput5" >
-								</div>
+							
 
+                                <div class="row">
+                                    <div class="col-md-6">
 
-								<div class="form-group">
-									<label for="userinput5">User's Email</label>
-									<input class="form-control border-primary" type="email"  id="userinput5" >
-								</div>
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Name</label>
+                                            <p class="form-control-static" id="staticInput">Omar Emad</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
 
-
-								<div class="form-group">
-									<label for="userinput5">User's Phone Number</label>
-									<input class="form-control border-primary" type="number"  id="userinput5" >
-								</div>
-
-
-								<div class="form-group">
-									<label for="userinput5">Password</label>
-									<input class="form-control border-primary" type="text"  id="userinput5" >
-								</div>
-
-
-								<div class="form-group">
-											                                <fieldset class="form-group">
-		                                    <label for="basicSelect">User's Role</label>
-		                                    <select class="form-control" id="basicSelect">
-		                                      <option>Select Option</option>
-		                                      <option selected>Administrator</option>
-		                                      <option>Operator</option>
-
-		                                    </select>
-		                                </fieldset>   
-								</div>
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Due Amount</label>
+                                            <p class="form-control-static" id="staticInput">2000 EGP</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
 
 
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Setteled Amount</label>
+                                            <input type="number" name="">
+                                        </fieldset>
+                            
+                                    </div>
+                                </div>
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+
+
+<ng-template #modal3 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Set Off Settelment</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> Setoff</h4>
+
+							
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Name</label>
+                                            <p class="form-control-static" id="staticInput">Mahitab Dagher</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Due Amount</label>
+                                            <p class="form-control-static" id="staticInput">200 EGP</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Setteled Amount</label>
+                                            <input type="number" name="">
+                                        </fieldset>
+                            
+                                    </div>
+                                </div>
+
+							</div>
+
+							<div class="form-actions right">
+								<button (click)="c('Close click')" type="button" class="btn btn-raised btn-warning mr-1">
+									<i class="ft-x"></i> Cancel
+								</button>
+								<button  (click)="c('Close click')" type="button" class="btn btn-raised btn-primary">
+									<i class="fa fa-check-square-o"></i> Save
+								</button>
+
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</ng-template>
+
+
+
+
+
+
+
+
+<ng-template #modal4 let-modal let-c="close" style="background-color: transparent;">
+<div style="padding: 0px;" class="col-lg-12 col-sm-12 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title" id="basic-layout-colored-form-control">Set Off Settelment</h4>
+				</div>
+				<div class="card-body">
+					<div class="px-3">						
+
+						<form class="form">
+							<div class="form-body">
+
+								<h4 class="form-section"><i class="ft-mail"></i> Setoff</h4>
+
+							
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Name</label>
+                                            <p class="form-control-static" id="staticInput">Hossam Emad</p>
+                                        </fieldset>
+                            
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Due Amount</label>
+                                            <p class="form-control-static" id="staticInput">144 EGP</p>
+                                        </fieldset>
+                            
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">Setteled Amount</label>
+                                            <input type="number" name="">
+                                        </fieldset>
+                            
+                                    </div>
+                                </div>
 
 							</div>
 

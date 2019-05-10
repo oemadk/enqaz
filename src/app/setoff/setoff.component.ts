@@ -55,6 +55,10 @@ constructor(private modalService: NgbModal, private router: Router,
         this.table.offset = 0;
     }
 
+  addNew2(modal){
+  this.modalService.open(modal,  { windowClass : "myCustomModalClass"});
+
+}
       onSelect(modal) {
         console.log(event);
         this.modalService.open(modal).result.then((result) => {

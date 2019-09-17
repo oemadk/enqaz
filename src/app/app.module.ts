@@ -97,7 +97,7 @@ import { JsonpModule } from '@angular/http';
         ToastModule.forRoot(),
         NgbModule.forRoot(),
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyBr5_picK8YJK7fFR2CPzTVMj6GG1TtRGo'
+            apiKey: 'AIzaSyCTDyIy1bE3ZipOnUfDyiVS8Fqz6raGmWw'
         }),
             FormsModule,    //added here too
     ReactiveFormsModule //added here too

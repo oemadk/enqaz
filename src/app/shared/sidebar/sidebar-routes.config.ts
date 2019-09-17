@@ -1,6 +1,8 @@
 import { RouteInfo } from './sidebar.metadata';
 
 //Sidebar menu Routes and data
+
+
 export const ROUTES: RouteInfo[] = [
 
     // {
@@ -194,4 +196,65 @@ export const ROUTES: RouteInfo[] = [
     // },
     // { path: 'https://pixinvent.com/apex-angular-4-bootstrap-admin-template/documentation', title: 'Documentation', icon: 'ft-book', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] },
     // { path: 'https://pixinvent.ticksy.com/', title: 'Support', icon: 'ft-life-buoy', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] },
+];
+
+
+
+
+
+
+
+
+
+
+
+export const OperatorROUTES: RouteInfo[] = [
+
+
+        { path: '/dashboard/dashboard2', title: 'Dashboard', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/customers', title: 'Customers', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/users', title: 'Users', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+
+    {
+        path: '', title: 'Orders', icon: 'ft-tag', class: 'has-sub', badge: '', badgeClass: 'badge badge-pill badge-danger float-right mr-1 mt-1', isExternalLink: false, submenu: [
+            { path: '/orders/new', title: 'New', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/orders/in-progress', title: 'In progress', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/orders/completed', title: 'Done', icon: '', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        ]
+    },
+
+    { path: '/trackdrivers', title: 'Track Drivers', icon: 'ft-info', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+
+];
+
+
+export const InsuranceROUTES: RouteInfo[] = [
+
+
+        { path: '/dashboard/dashboard2', title: 'Dashboard', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/customers', title: 'Customers', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/users', title: 'Users', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/trackdrivers', title: 'Track Drivers', icon: 'ft-info', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+
+];
+
+export const ShowroomROUTES: RouteInfo[] = [
+
+
+        { path: '/dashboard/dashboard2', title: 'Dashboard', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/customers', title: 'Customers', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/users', title: 'Users', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/packages', title: 'Packages', icon: 'ft-package', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+
+];
+
+
+export const CompanyProviderROUTES: RouteInfo[] = [
+
+
+        { path: '/dashboard/dashboard2', title: 'Dashboard', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/customers', title: 'Drivers', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/users', title: 'Cars', icon: 'ft-users', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        { path: '/packages', title: 'My Packages', icon: 'ft-package', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+
 ];

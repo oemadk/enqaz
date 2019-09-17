@@ -63,6 +63,30 @@ export class LoginPageComponent implements OnInit {
         this.route.navigate(['dashboard/dashboard1'])
     }
     onSubmit() {
+            localStorage.setItem('role', 1);
+
         this.route.navigate(['dashboard/dashboard2'])
+    }
+    signInAsOperator(){
+      localStorage.setItem('role', 2);
+      this.route.navigate(['dashboard/dashboard2'])
+
+    }
+
+
+        signInAsInsurance(){
+      localStorage.setItem('role', 3);
+      this.route.navigate(['dashboard/dashboard2'])
+
+    }
+
+    signInAsShowroom(){
+            localStorage.setItem('role', 4);
+      this.route.navigate(['dashboard/dashboard2'])
+    }
+
+        signInAsCompanyProvider(){
+            localStorage.setItem('role', 5);
+      this.route.navigate(['dashboard/dashboard2'])
     }
 }

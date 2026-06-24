@@ -38,7 +38,7 @@
     "core-js": "^2.5.0",
     "d3": "^7.6.1",
     "datatables.net": "^1.10.15",
-    "firebase": "^5.8.5",
+    "firebase": "^12.15.0",
     "intl": "^1.2.5",
     "jquery": "^3.2.1",
     "ng-chartist": "^1.1.1",
